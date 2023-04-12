@@ -1,0 +1,34 @@
+<main>
+  <section>
+    <div class="container">
+      <div class="py-5 mt-3 text-center">
+        <img class="d-block mx-auto mb-4" src="../images/logo.svg" alt="" width="72" height="57"> 
+        <h2 class="h2">Minha Conta</h2>
+        <p class="lead">Preencha os campos para alterar os dados da sua conta.</p>
+      </div>
+        
+      <div class="mx-auto col-lg-8 mt-1">
+        <form class="needs-validation" action="/alterar_dados" method="POST">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" name="nome" placeholder="<?=$this->view->dados[0]['nome']?>">               
+              </div>
+
+              <div class="col-sm-6">
+                <label for="descricao" class="form-label">E-mail</label>
+                <input type="text" class="form-control" name="email" placeholder="<?=$this->view->dados[0]['email']?>">               
+              </div>
+
+              <div class="col-6">
+                <label  class="form-label mb-2">Senha</label>
+                <input type="text" name="senha" class="form-control">
+              </div>
+              <hr class="my-4">
+              <input class="btn btn-lg btn-danger" value="Salvar" name="salvar_alteracao" type="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>

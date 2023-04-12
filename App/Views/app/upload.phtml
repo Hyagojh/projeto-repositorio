@@ -1,0 +1,47 @@
+<main>
+  <section>
+    <div class="container">
+      <div class="py-5 mt-3 text-center">
+        <img class="d-block mx-auto mb-4" src="../images/logo.svg" alt="" width="72" height="57">
+        <h2 class="h2">Upload de arquivo</h2>
+        <p class="lead">Preencha as informações solicitadas abaixo para concluir o seu upload.</p>
+      </div>
+
+      <div class="mx-auto col-lg-8 mt-1">
+        <form class="needs-validation" action="/enviar_arquivo" method="POST" enctype="multipart/form-data">
+            <div class="row g-3">
+              <div class="col-sm-12">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="text" class="form-control" name="nome" required>               
+                <div class="invalid-feedback">
+                    Campo obrigatório.
+                </div>
+              </div>
+
+              <div class="col-sm-12">
+                <label for="descricao" class="form-label">Descrição</label>
+                <textarea type="text" class="form-control" name="descricao" required></textarea>               
+                <div class="invalid-feedback">
+                    Campo obrigatório.
+                </div>
+              </div>
+
+              <div class="col-6">
+                <label  class="form-label mb-2">Arquivo</label>
+                <div class="input-group has-validation">
+                  <input name="arquivo" type="file" class="form-control" required>
+                  <div class="invalid-feedback">
+                    Campo obrigatório.
+                  </div>
+                </div>
+              </div>
+              <hr class="my-4">
+              <input class="btn btn-lg btn-danger" value="Enviar" name="enviar_arquivo" type="submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+

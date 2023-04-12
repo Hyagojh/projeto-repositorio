@@ -1,0 +1,58 @@
+<section>
+  <div class="container">
+    <div class="table-responsive mt-5">          
+        <table class="table table-hover table-borderd">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Tamanho (bytes)</th>
+              <th>Tipo</th>
+              <th>Data</th>
+              <th>Ações</th>  
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach($this->view->arquivos as $key => $value) {?>  
+              <tr>
+                <td><?=$value['nome']?></td>
+                <td><?=$value['nome_arquivo']?></td>
+                <td><?=$value['descricao']?></td>
+                <td><?=$value['tamanho']?></td>
+                <td><?=$value['tipo']?></td>
+                <td><?=$value['data']?></td>
+                <td>
+                  <a href='/ver_arquivo?id=<?=$value['id']?>' target='_blank'><img src='../images/visualizar.png' style='width:30px; height:30px;cursor:pointer;'></a>
+                  <a href='/baixar_arquivo?id=<?=$value['id']?>' target='_blank'><img src='../images/download.png' style='width:30px; height:30px;cursor:pointer;'></a>
+                </td>
+              </tr>
+            <?php }?>
+          </tbody>
+        </table>
+
+        <div class="mt-5">
+          <nav>
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link text-dark" href="?pagina=1&nome_usuario=<?=$_GET['nome_usuario']?>" tabindex="-1">Primeira</a>
+              </li>
+              
+              <?php for($i = 1; $i <= $this->view->paginacao; $i++) {?>
+
+                <li class="page-item  <?= $this->view->pagina_ativa == $i ? 'active' : '' ?> ">
+                  <a class="page-link text-dark" href="?pagina=<?=$i?>&nome_usuario=<?=$_GET['nome_usuario']?>"><?=$i?></a>
+                </li>
+
+              <?php } ?> 
+                
+              <li class="page-item">
+                <a class="page-link text-dark" href="?pagina=<?=$this->view->paginacao?>&nome_usuario=<?=$_GET['nome_usuario']?>">Última</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+  </div>
+</section>

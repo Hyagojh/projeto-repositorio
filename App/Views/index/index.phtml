@@ -1,0 +1,48 @@
+<main>
+  <section class="py-3 form-signin text-center" style="margin-top: 100px;">
+    <div class="row">
+      <form method="post" action="/autenticar"> 
+        <img class="mb-4" src="..\images\logo.svg" width="300" height="80">
+        <h3 class="h3 mb-3 fw-normal">Por favor, identifique-se</h3>
+
+        <div class="form-floating">
+         <input type="email" name="email" class="form-control" id="floatingInput" placeholder="E-mail">
+          <label for="floatingInput">E-mail</label>
+        </div>
+
+        <div class="form-floating">
+         <input type="password" name="senha" class="form-control" id="floatingPassword" placeholder="Senha">
+          <label for="floatingPassword">Senha</label>
+        </div>
+
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Lembrar
+          </label>
+        </div>
+
+        <?php if($this->view->login == 'erro') { ?>
+              
+          <div class="row mb-5">
+            <div class="col">
+              <span class="text text-danger">E-mail e ou senha inválido(s)</span>
+            </div>
+          </div>
+
+        <?php } ?>
+  
+        <div class="espacoBotoes">
+          <button type="submit" class="w-50 btn btn-lg btn-danger">Entrar</button>
+        </div> 
+
+        </div>
+          <div class="espacoBotoes">
+          <a href="/inscreverse" class="w-50 btn btn-lg btn-danger">Cadastre-se</a>
+          </div>
+        </div>  
+      </form>
+    </div>
+  <section>
+</main>
+
+
